@@ -13,7 +13,7 @@ dl()
     local archive_type=${5:-tar.gz}
     local platform="${os}-${arch}"
     local file=${APP}-${ver}-${platform}.${archive_type}
-    local url=$MIRROR/$ver/$file
+    local url=$MIRROR/v$ver/$file
     printf "    # %s\n" $url
     printf "    %s: sha256:%s\n" $platform `fgrep $file $lchecksums | awk '{print $1}'`
 }
@@ -23,7 +23,7 @@ dl_ver()
     local ver=$1
     local checksums=${APP}_${ver}_checksums.txt
     local lchecksums=$DIR/$checksums
-    local rchecksums=$MIRROR/$ver/$checksums
+    local rchecksums=$MIRROR/v$ver/$checksums
     if [ ! -e $lchecksums ];
     then
         wget -q -O $lchecksums $rchecksums
@@ -36,4 +36,4 @@ dl_ver()
     dl $ver $lchecksums linux x86_64
 }
 
-dl_ver ${1:-0.8.1}
+dl_ver ${1:-0.8.4}
