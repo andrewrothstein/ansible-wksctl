@@ -9,48 +9,48 @@
       skip: true
       paths:
         - '{{ role_path }}/vars'
-- name: check for install
-  become: yes
+- name: checking for install in {{ wksctl_install_dir }}
+  become: true
   stat:
     path: '{{ wksctl_install_dir }}'
   changed_when: False
   register: wksctl_binary
 - when: not wksctl_binary.stat.exists
   block:
-    - name: download
-      become: yes
+    - name: downloading {{ wksctl_url }}
+      become: true
       become_user: root
       get_url:
         url: '{{ wksctl_url }}'
-        dest: /tmp/{{ wksctl_tgz }}
+        dest: '{{ wksctl_tmp_tgz }}'
         mode: 0644
         checksum: '{{ wksctl_checksum }}'
-    - name: mkdir
-      become: yes
+    - name: mkdir {{ wksctl_install_dir }}
+      become: true
       become_user: root
       file:
         path: '{{ wksctl_install_dir }}'
         state: directory
         mode: 0755
-    - name: unarchive
-      become: yes
+    - name: unarchiving {{ wksctl_tmp_tgz }}
+      become: true
       become_user: root
       unarchive:
-        remote_src: yes
-        src: /tmp/{{ wksctl_tgz }}
+        remote_src: true
+        src: '{{ wksctl_tmp_tgz }}'
         dest: '{{ wksctl_install_dir }}'
-        creates: '{{ wksctl_fq_exe }}'
+        creates: '{{ wksctl_exe }}'
   always:
-    - name: cleanup
-      become: yes
+    - name: rm {{ wksctl_tmp_tgz }}
+      become: true
       become_user: root
       file:
-        path: /tmp/{{ wksctl_tgz }}
+        path: '{{ wksctl_tmp_tgz }}'
         state: absent
-- name: link
-  become: yes
+- name: linking {{ wksctl_link }} to {{ wksctl_exe }}
+  become: true
   become_user: root
   file:
-    src: '{{ wksctl_fq_exe }}'
+    src: '{{ wksctl_exe }}'
     dest: '{{ wksctl_link }}'
     state: link

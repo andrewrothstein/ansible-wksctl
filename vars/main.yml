@@ -2,8 +2,9 @@
 # vars file for wksctl
 wksctl_platform: '{{ wksctl_os }}-{{ wksctl_arch }}'
 wksctl_tgz: wksctl-{{ wksctl_ver }}-{{ wksctl_platform }}.tar.gz
+wksctl_tmp_tgz: /tmp/{{ wksctl_tgz }}
 wksctl_url: '{{ wksctl_mirror }}/v{{ wksctl_ver }}/{{ wksctl_tgz }}'
 wksctl_checksum: '{{ wksctl_checksums[wksctl_ver][wksctl_platform] }}'
 wksctl_install_dir: '{{ wksctl_parent_install_dir }}/wksctl-{{ wksctl_ver }}'
-wksctl_fq_exe: '{{ wksctl_install_dir }}/wksctl'
+wksctl_exe: '{{ wksctl_install_dir }}/wksctl'
 wksctl_link: '{{ wksctl_parent_install_dir }}/bin/wksctl'
