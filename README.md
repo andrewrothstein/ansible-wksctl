@@ -1,6 +1,6 @@
 andrewrothstein.wksctl
 =========
-[![Build Status](https://travis-ci.org/andrewrothstein/ansible-wksctl.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-wksctl)
+![Build Status](https://github.com/andrewrothstein/ansible-wksctl/actions/workflows/build.yml/badge.svg)
 
 Installs Weaveworks [wksctl](https://github.com/weaveworks/wksctl).
 
