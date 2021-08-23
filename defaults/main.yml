@@ -1,6 +1,6 @@
 ---
 # defaults file for wksctl
-wksctl_ver: 0.8.5
+wksctl_ver: 0.10.2
 wksctl_mirror: https://github.com/weaveworks/wksctl/releases/download
 wksctl_os: linux
 wksctl_arch: x86_64
@@ -18,3 +18,9 @@ wksctl_checksums:
     darwin-x86_64: sha256:0ab03c00dd43e1f0c7cb5240ce7bc0e183aa646958bf57c8a923816a6a844fb2
     # https://github.com/weaveworks/wksctl/releases/download/v0.8.5/wksctl-0.8.5-linux-x86_64.tar.gz
     linux-x86_64: sha256:875ef18d345337a9055c6cbd51bc0906ed1e81d7280e14afc2289938dff3f02b
+  # https://github.com/weaveworks/wksctl/releases/download/v0.10.2/wksctl_0.10.2_checksums.txt
+  '0.10.2':
+    # https://github.com/weaveworks/wksctl/releases/download/v0.10.2/wksctl-0.10.2-darwin-x86_64.tar.gz
+    darwin-x86_64: sha256:c1d06f5aaa638d693aec13226c45cf5f8a7f6732c2e67022731be22b710e539e
+    # https://github.com/weaveworks/wksctl/releases/download/v0.10.2/wksctl-0.10.2-linux-x86_64.tar.gz
+    linux-x86_64: sha256:93bf59a1284cc4a927f1ac8af2c988f9525e7311359d62b1e87d9c59bae444fd
