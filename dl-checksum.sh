@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-#set -x
+set -e
 DIR=~/Downloads
 APP=wksctl
 MIRROR=https://github.com/weaveworks/${APP}/releases/download
@@ -36,4 +36,4 @@ dl_ver()
     dl $ver $lchecksums linux x86_64
 }
 
-dl_ver ${1:-0.8.4}
+dl_ver ${1:-0.8.5}
