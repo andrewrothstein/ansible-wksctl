@@ -2,8 +2,6 @@
 # defaults file for wksctl
 wksctl_ver: 0.10.2
 wksctl_mirror: https://github.com/weaveworks/wksctl/releases/download
-wksctl_os: linux
-wksctl_arch: x86_64
 wksctl_parent_install_dir: /usr/local
 wksctl_checksums:
   # https://github.com/weaveworks/wksctl/releases/download/v0.8.4/wksctl_0.8.4_checksums.txt

@@ -1,5 +1,7 @@
 ---
 # vars file for wksctl
+wksctl_os: '{{ ansible_system | lower }}'
+wksctl_arch: '{{ ansible_architecture }}'
 wksctl_platform: '{{ wksctl_os }}-{{ wksctl_arch }}'
 wksctl_tgz: wksctl-{{ wksctl_ver }}-{{ wksctl_platform }}.tar.gz
 wksctl_tmp_tgz: /tmp/{{ wksctl_tgz }}
